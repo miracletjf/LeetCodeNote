@@ -2,18 +2,39 @@
   "tasks": [
     {
       "type": "cppbuild",
-      "label": "C/C++: g++.exe build active file",
+      "label": "cppBuildTask",
       "command": "g++",
-      "args": ["-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${workspaceFolder}\\exec\\${fileBasenameNoExtension}.exe"
+      ],
       "options": {
         "cwd": "${fileDirname}"
       },
-      "problemMatcher": ["$gcc"],
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build",
+      "detail": "编译 .cpp >>> .exe"
+    },
+    {
+      "type": "shell",
+      "label": "cleanExeFile",
+      "command": "rm",
+      "args": [
+        "*.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\exec"
+      },
+      "detail": "清理.exe文件",
+      "problemMatcher": [],
       "group": {
         "kind": "build",
         "isDefault": true
-      },
-      "detail": "编译 .cpp >>> .exe"
+      }
     }
   ],
   "version": "2.0.0"

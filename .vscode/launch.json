@@ -8,7 +8,7 @@
           "name": "C++ Launch (Windows)",
           "type": "cppdbg",
           "request": "launch",
-          "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+          "program": "${workspaceFolder}\\exec\\${fileBasenameNoExtension}.exe",
           "args": [],
           // 是否在入口处(main)打断点
           "stopAtEntry": false,
@@ -25,7 +25,7 @@
               }
           ],
           // 与tasks.json中的label相对应，选取预先编译的任务
-          "preLaunchTask": "C/C++: g++.exe build active file"
+          "preLaunchTask": "cppBuildTask"
       }
   ]
 }
